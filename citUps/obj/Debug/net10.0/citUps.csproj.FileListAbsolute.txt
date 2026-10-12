@@ -1,0 +1,15 @@
+C:\Users\DELL\source\repos\citUps\citUps\bin\Debug\net10.0\citUps.exe
+C:\Users\DELL\source\repos\citUps\citUps\bin\Debug\net10.0\citUps.deps.json
+C:\Users\DELL\source\repos\citUps\citUps\bin\Debug\net10.0\citUps.runtimeconfig.json
+C:\Users\DELL\source\repos\citUps\citUps\bin\Debug\net10.0\citUps.dll
+C:\Users\DELL\source\repos\citUps\citUps\bin\Debug\net10.0\citUps.pdb
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.AssemblyInfo.cs
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.dll
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\refint\citUps.dll
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.pdb
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.genruntimeconfig.cache
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\ref\citUps.dll
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.csproj.Up2Date

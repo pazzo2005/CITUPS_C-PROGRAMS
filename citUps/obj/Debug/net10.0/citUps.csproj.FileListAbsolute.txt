@@ -13,3 +13,4 @@ C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.pdb
 C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.genruntimeconfig.cache
 C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\ref\citUps.dll
 C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.csproj.Up2Date
+C:\Users\DELL\source\repos\citUps\citUps\obj\Debug\net10.0\citUps.sourcelink.json

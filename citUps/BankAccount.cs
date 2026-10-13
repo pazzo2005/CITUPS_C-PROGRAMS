@@ -4,93 +4,138 @@ using System.Text;
 
 namespace citUps
 {
-    public class BankAccount
-    {
-        public string Name { get; private set; }
-        public long AccountNumber { get; private set; }
-        public double BalanceAmount { get; private set; }
-     
-        
-        public BankAccount(string name,long accountNumber,double balanaceAmount)
+    public class BankAccount {
+        private string name;
+        private long accountNumber;
+        private decimal amount;
+        public BankAccount(string name , long accountNumber , decimal amount)
         {
-            Name = name;
-            AccountNumber = accountNumber;
-            BalanceAmount = balanaceAmount;
+            this.name = name;
+            this.accountNumber = accountNumber;
+            this.amount = amount;
         }
-        static List<BankAccount> bankAccounts = new List<BankAccount>();
-        public string  CreateAccount(string name,long accountNumber,double balanceAmount)
+        static List<BankAccount> accounts = new List<BankAccount>();
+       
+        public void CreateAccount()
         {
-            try
-            {
-                BankAccount account = new BankAccount(name, accountNumber, balanceAmount);
-                bankAccounts.Add(account);
-
-            }catch(Exception e)
-            {
-                Console.WriteLine("Error creating account:" + e.Message);
-            }
-            return "Account created Successfully";
-
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            Console.Write("Enter your account number: ");
+            long accountNumber = Convert.ToInt64(Console.ReadLine());
+            Console.Write("Enter your initial deposit amount:  ");
+            decimal amount = Convert.ToDecimal(Console.ReadLine());
+            BankAccount account = new BankAccount(name, accountNumber, amount);
+            accounts.Add(account);
+            Console.WriteLine("Account created successfully ");
         }
-        public string DeleteAccount(long Number)
+        public void Deposit()
         {
-            try
+            Console.Write("Enter your account number: ");
+            long accountNumber =Convert.ToInt64(Console.ReadLine());
+            Console.Write("Enter the amount u want to deposit: ");
+            decimal amount = Convert.ToDecimal(Console.ReadLine());
+            BankAccount account = accounts.Find(a => a.accountNumber == accountNumber);
+            if (account != null) 
             {
-                BankAccount account = bankAccounts.Find(a => a.AccountNumber == Number);
-                if (account != null)
+                if(amount <= 0)
                 {
-                    bankAccounts.Remove(account);
-                    return "Account deleted successfully";
+                    Console.WriteLine("Amount cannot be less than or equal to zero");
+                    return;
                 }
-                return "Account does not exist";
-
-            }
-            catch(Exception e)
-            {
-                return "Error in deleteing the account" + e.Message;
-            }
-        }
-        public void AddBalance(double amount)
-        {
-
-        }
-        public string Deposit(long number , double amount)
-        {
-            try
-            {
-                BankAccount account = bankAccounts.Find(a => a.AccountNumber == number);
-                if (account != null)
+                else
                 {
-                    account.BalanceAmount += amount;
-                    return "Deposit successfully";
+                    account.amount += amount;
+                    Console.WriteLine("Deposit successfully");
+                    return;
                 }
-                return "Account does not exist";
-
             }
-            catch(Exception e)
+            else
             {
-                return "Error in deposit" + e.Message;
+                Console.Write("Account not found");
+                return;
             }
+            return;
         }
-        public string WithDraw(long number , double amount)
+        public void WithDraw()
         {
-            try
+            Console.Write("Enter your account number: ");
+            long accountNumber = Convert.ToInt64(Console.ReadLine());
+            Console.Write("Enter the amount u want to withdraw: ");
+            decimal amount = Convert.ToDecimal(Console.ReadLine());
+            BankAccount account = accounts.Find(a => a.accountNumber == accountNumber);
+            if (account != null)
             {
-                BankAccount account = bankAccounts.Find(a => a.AccountNumber == number);
-                if (account != null)
+                if (amount <= 0)
                 {
-                    if(account.BalanceAmount==0 || account.BalanceAmount < amount)
-                    {
-                        return "Insufficient Balance";
-                    }
-                    account.BalanceAmount -= amount;
-                    return "withdraw successfully";
+                    Console.WriteLine("Insufficient balance");
+                    return;
                 }
-                return "account does not exist";
-            }catch(Exception e)
+                else
+                {
+                    account.amount -= amount;
+
+                    Console.WriteLine("Amount withdrwan successfully");
+                    return;
+                }
+            }
+            else
             {
-                return "Error in withdraw" + e.Message;
+                Console.Write("Account not found:");
+                return;
+            }
+
+        }
+
+        public void Balances()
+        {
+            Console.Write("Enter your account number: ");
+            long accountNumber = Convert.ToInt64(Console.ReadLine());
+            BankAccount account = accounts.Find(a => a.accountNumber == accountNumber);
+            if (account != null)
+            {
+                Console.Write(account.amount);
+                return;
+            }
+            else
+            {
+                Console.Write("Account not found ");
             }
         }
+         public   void  Service()
+        {
+            while (true)
+            {
+                Console.WriteLine("Choose the service: 1.)Account creation 2.)Deposit 3.)Withdraw 4.)Check Balance");
+                int service = Convert.ToInt32(Console.ReadLine());
+                switch (service)
+                {
+                    case 1:
+                        CreateAccount();
+                        break;
+                    case 2:
+                        Deposit();
+                        break;
+                    case 3:
+                        WithDraw();
+                        break;
+                    case 4:
+                        Balances();
+                        break;
+                    case 5:
+                        Console.WriteLine("Thank u for using our bank application!");
+                        return;
+                    default:
+                        Console.Write("no service available");
+                        break;
+                }
+            }
+        }
+
+           
+        }
+
     }
-}
+    
+       
+    
+

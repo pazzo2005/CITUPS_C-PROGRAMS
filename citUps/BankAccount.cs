@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -54,7 +54,7 @@ namespace citUps
                 Console.Write("Account not found");
                 return;
             }
-            return;
+            
         }
         public void WithDraw()
         {
@@ -63,8 +63,15 @@ namespace citUps
             Console.Write("Enter the amount u want to withdraw: ");
             decimal amount = Convert.ToDecimal(Console.ReadLine());
             BankAccount account = accounts.Find(a => a.accountNumber == accountNumber);
-            if (account != null)
+            if(account.amount==0 || account.amount<amount)
             {
+                Console.WriteLine("insufficient");
+                return;
+            }
+            if (account != null )
+
+            {
+                
                 if (amount <= 0)
                 {
                     Console.WriteLine("Insufficient balance");
@@ -73,6 +80,7 @@ namespace citUps
                 else
                 {
                     account.amount -= amount;
+                    if (account.amount < 0) account.amount = 0;
 
                     Console.WriteLine("Amount withdrwan successfully");
                     return;
@@ -93,7 +101,13 @@ namespace citUps
             BankAccount account = accounts.Find(a => a.accountNumber == accountNumber);
             if (account != null)
             {
-                Console.Write(account.amount);
+                if (account.amount < 0)
+                {
+                    account.amount = 0;
+                    Console.WriteLine("Zero Balance");
+                    return;
+                }
+                Console.WriteLine(account.amount);
                 return;
             }
             else

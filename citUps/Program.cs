@@ -8,8 +8,9 @@ namespace citUps
         static void Main(string[] args)
         {
 
-            BankAccount bank = new BankAccount("aditya",789,65);
-            bank.Service();
+            
+            ParkingSystemManager park = new ParkingSystemManager('A',true);
+            park.ParkingService();
 
         }
     }

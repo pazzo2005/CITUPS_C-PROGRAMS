@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("citUps")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02aab38c751cb65bc08743099fa371ef270f9ba4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70682e95077e731665ee2c19c33f3bd7cb0fb5fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("citUps")]
 [assembly: System.Reflection.AssemblyTitleAttribute("citUps")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

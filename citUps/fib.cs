@@ -81,11 +81,39 @@ namespace citUps
             Console.WriteLine(total);
                 
         }
+        public void ThreeDim(int layer,int row,int col)
+
+        {
+            int sum = 0;
+            int[,,] arr = new int[layer,row,col];
+            for(int i = 0; i < layer; ++i)
+            {
+                for(int j = 0; j < row; ++j)
+                {
+                    for(int h=0; h < col; ++h)
+                    {
+                        Console.WriteLine("Enter the number : ");
+                        arr[i, j, h] = Convert.ToInt16(Console.ReadLine());
+
+                    }
+                }
+            }
+            for(int i = 0; i < layer; ++i)
+            {
+                for(int j = 0; j < row; ++j)
+                {
+                    for(int k = 0; k < col; ++k)
+                    {
+                        Console.WriteLine(arr[i, j, k]);
+                    }
+                }
+            }
+        }
         public static void Main(String[] args)
 
         {
             fib f = new fib();
-            f.TwoDimArr(2,2);
+            f.ThreeDim(2, 2, 2);
             
 
         }

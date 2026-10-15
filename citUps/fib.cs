@@ -230,9 +230,13 @@ namespace citUps
         }
 
         public void CollectionPractise()
+
         {
             Console.WriteLine("Enter the size");
             int n = Convert.ToInt16(Console.ReadLine());
+            /***
+            
+            
             ArrayList val = new ArrayList();
             for(int i = 0; i < n; ++i)
             {
@@ -279,18 +283,100 @@ namespace citUps
             }
             
             
-
-
             
 
-        }
+            SortedList list = new SortedList();
+            for(int i = 0; i < n; ++i)
+            {
+                Console.WriteLine("Enter the number ");
+                int no = Convert.ToInt16(Console.ReadLine());
+                Console.WriteLine("Enter the string");
+                string value = Console.ReadLine();
+                list.Add(no, value);
+            }
 
+            foreach (object i in list)
+            {
+                Console.WriteLine(i);
+            }
+            
+
+        
+            
+            Stack st = new Stack();
+            
+            for(int i = 0; i < n; ++i)
+            {
+                Console.WriteLine("Enter the value");
+                var s = Console.ReadLine();
+                st.Push(s);
+            }
+            
+            Queue cit = new Queue();
+            for (int i = 0; i < n; ++i)
+            {
+                Console.WriteLine("Enter the value");
+                var s = Console.ReadLine();
+                cit.Enqueue(s);
+            }
+            foreach(object i in st)
+            {
+                Console.WriteLine(i);
+            }
+            foreach(object i in cit)
+            {
+                Console.WriteLine(i);
+            }
+
+            List<string> list1 = new List<string>();
+            list1.Add("hello sunEATER");
+            list1.Add("I am AshBorn");
+            foreach(string i in list1)
+            {
+                Console.Write(i + " ");
+            }
+            string[] str = { "Na", "Nenaithal", "nadudhe", "thirum" };
+            list1.AddRange(str);
+            foreach(string i in str)
+            {
+                Console.WriteLine(i);
+            }
+            list1.RemoveAt(1);
+            Console.WriteLine("modified list , will  shown here!");
+            foreach(string i in list1)
+            {
+                Console.WriteLine(i);
+            }
+            
+            HashSet<string> set = new HashSet<string>();
+            for (int i = 0; i < n; ++i)
+            {
+                
+                Console.WriteLine("Enter the string");
+                string value = Console.ReadLine();
+                set.Add(value);
+            }
+
+            foreach (string i in set)
+            {
+                Console.WriteLine(i);
+            }
+            ***/
+            Dictionary<int, string> dict = new Dictionary<int ,string>();
+            dict.Add(1, "hi");
+            dict.Add(2, "solla");
+            foreach(object i in dict)
+            {
+                Console.Write(i);
+            }
+
+        }
         public static void Main(String[] args)
 
         {
             fib f = new fib();
             f.CollectionPractise();
-
+            
 
 
             

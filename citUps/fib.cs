@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
@@ -84,7 +85,7 @@ namespace citUps
         public void ThreeDim(int layer,int row,int col)
 
         {
-            int sum = 0;
+            
             int[,,] arr = new int[layer,row,col];
             for(int i = 0; i < layer; ++i)
             {
@@ -108,12 +109,190 @@ namespace citUps
                     }
                 }
             }
+            int sum = arr.Cast<int>().Sum();
+            Console.WriteLine("The sum of all numbers +"+sum);
         }
+        public void StringDimen(int layer , int row , int col)
+        {
+            string[,,] arr = new string[layer, row, col];
+            Console.WriteLine("Enter the string , for assigning it to the matrix");
+            for(int i = 0; i < layer; ++i)
+            {
+                for(int j = 0; j < row; ++j)
+                {
+                    for(int l = 0; l < col; ++l)
+                    {
+                        Console.WriteLine("Enter it one by one");
+                        arr[i, j, l] = Console.ReadLine();
+                    }
+                }
+            }
+            foreach(string element in arr)
+            {
+                Console.WriteLine(element);
+            }
+            string[] arr1 = new string[row];
+            for(int i = 0; i < row; ++i)
+            {
+                arr1[i] = Console.ReadLine();
+                Console.WriteLine(arr1[i]);
+            }
+        }
+        public void StringModification(String s)
+        {
+            StringBuilder st = new StringBuilder(s);
+            
+            
+        }
+        public void OddEven(int n)
+        {
+            List<int> even = new List<int>();
+            List<int> odd = new List<int>();
+            int[] arr = new int[n];
+            for(int i = 0; i < n; ++i)
+            {
+                arr[i] = Convert.ToInt16(Console.ReadLine());
+                if (arr[i] % 2 == 0)
+                {
+                    even.Add(arr[i]);
+                }
+                else
+                {
+                    odd.Add(arr[i]);
+                }
+                
+
+            }
+            Console.WriteLine("Following numbers are even");
+            foreach(int element in even)
+            {
+                Console.Write(element + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Following numbers are odd");
+            foreach(int element in odd)
+            {
+                Console.Write(element + " ");
+            }
+        }
+        public void MatrixEvenOdd(int layer,int row,int col)
+        {
+            int[,,] arr = new int[layer, row, col];
+            int l = 0, r = 0, c = 0;
+            while(l<layer && r<row && c < col)
+            {
+                if (r == row && c == col)
+                {
+                    break;
+                }
+                Console.WriteLine("Give me the number : ");
+                int s = Convert.ToInt16(Console.ReadLine());
+                if (s % 2 == 0)
+                {
+                    arr[l, r, c] = s;
+                    r++;
+                    if (r >= row)
+                    {
+                        Console.WriteLine("Row completed !");
+                        r = 0;
+                        c++;
+                    }
+                }
+                else
+                {
+                    arr[l, r , c] = s;
+                    c++;
+                    if (c >= col)
+                    {
+                        Console.WriteLine("Col completed!");
+                        c = 0;
+                        r++;
+                    }
+                }
+                if (r >= row || c >= col)
+                {
+                    r = 0;
+                    c = 0;
+                    l++;
+                }
+            }
+
+            for (int i = 0; i < layer; ++i)
+            {
+                for (int j = 0; j < row; ++j)
+                {
+                    for (int k = 0; k < col; ++k)
+                    {
+                        Console.WriteLine(arr[i, j, k]);
+                    }
+                }
+            }
+        }
+
+        public void CollectionPractise()
+        {
+            Console.WriteLine("Enter the size");
+            int n = Convert.ToInt16(Console.ReadLine());
+            ArrayList val = new ArrayList();
+            for(int i = 0; i < n; ++i)
+            {
+                Console.WriteLine("Enter the element ");
+                val.Add(Console.ReadLine());
+            }
+            foreach(object i in val)
+            {
+                Console.WriteLine(i);
+            }
+            
+           
+           
+            
+            Hashtable table = new Hashtable();
+            for(int i = 0; i < n; ++i)
+            {
+                Console.WriteLine("Enter the number ");
+                int no = Convert.ToInt16(Console.ReadLine());
+                Console.WriteLine("Enter the string");
+                string value = Console.ReadLine();
+                table.Add(no, value);
+            }
+            foreach(object i in table)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine("Enter the value to be remove");
+            var input = Console.ReadLine();
+            if (val.Contains(input))
+            {
+                val.Remove(input);
+            }
+            Console.WriteLine("Enter the value to remove from the table ");
+            var sup = Console.ReadLine();
+            if (table.ContainsKey(sup))
+            {
+                table.Remove(sup);
+            }
+            for(int i = 0; i < n; ++i)
+            {
+                Console.Write(val[i] + " " + table[i]);
+            }
+            
+            
+
+
+            
+
+        }
+
         public static void Main(String[] args)
 
         {
             fib f = new fib();
-            f.ThreeDim(2, 2, 2);
+            f.CollectionPractise();
+
+
+
             
 
         }

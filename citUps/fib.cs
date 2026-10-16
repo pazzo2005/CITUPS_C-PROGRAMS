@@ -361,7 +361,7 @@ namespace citUps
             {
                 Console.WriteLine(i);
             }
-            ***/
+           
             Dictionary<int, string> dict = new Dictionary<int ,string>();
             dict.Add(1, "hi");
             dict.Add(2, "solla");
@@ -369,7 +369,27 @@ namespace citUps
             {
                 Console.Write(i);
             }
+             ***/
+            LinkedList<int> list = new LinkedList<int>();
+            list.AddFirst(1);
+            LinkedListNode<int> node = list.Find(1);
+            list.AddAfter(node,2);
+            list.AddLast(3);
+            LinkedListNode<int> head = list.First;
+            while (head != null)
+            {
+                Console.WriteLine(head.Value);
+                head = head.Next;
+            }
+            list.RemoveFirst();
 
+            head = list.First;
+
+            while (head != null)
+            {
+                Console.WriteLine(head.Value);
+                head = head.Next;
+            }
         }
         public static void Main(String[] args)
 
